@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FalconBMS Keybindings</title>
+    <meta name="description" content="Tools for setup of controls for Falcon BMS">
+    <meta name="author" content="PeterLux">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+<body>
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="app">
+    <main class="px-3">
+        <h1>Falcon BMS Keybindings Editor <img src="android-chrome-512x512.png" width="48"></h1>
+        <p class="lead">Enter here your first and second file you want to merge, with the full path:</p>
+        <div class="configs">
+            <p>
+                <label for="firstFile">First keybinding file</label>
+                <input id="firstFile" type="text" v-model="filePath1" placeholder="C:\...\FalconBMS\User\Config\BMS - Basic.key">
+                <span>{{filePath1}}</span>
+            </p>
+            <p>
+                <label for="secondFile">Second keybinding file</label>
+                <input id="secondFile" type="text" v-model="filePath2" placeholder="C:\...\FalconBMS\User\Config\BMS - BasicDX X-55.key">
+            </p>
+        </div>
+        <button class="btn btn-primary" v-on:click="loadKeyBindings">Load</button>
+    </main>
+    <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+                href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+<script>
+    // Development settings
+    document.getElementById("firstFile").value = 'C:\\Falcon BMS 4.35\\User\\Config\\BMS - Basic.key';
+    document.getElementById("secondFile").value = 'C:\\Falcon BMS 4.35\\User\\Config\\BMS - BasicDX X-55.key';
+</script>
+</body>
+</html>
